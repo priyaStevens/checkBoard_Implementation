@@ -1,4 +1,4 @@
-package CS501.checkBoard_Implementation;
+//package CS501.checkBoard_Implementation;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Parent;
@@ -17,6 +17,7 @@ public class Checkers_App extends Application {
     private Group tile_Group = new Group();
     private Group piece_Group = new Group();
 
+    /*** main method to start the program*/
     public static void main(String[] args) {
         launch(args);
     }
@@ -53,6 +54,7 @@ public class Checkers_App extends Application {
         return root;
     }
 
+    /***shows the direction one can move */
     private Move_Result tryMove(Piece piece, int newX, int newY) {
         if (_board[newX][newY].has_Piece() || (newX + newY) % 2 == 0) {
             return new Move_Result(Move_Type.NONE);
@@ -76,6 +78,7 @@ public class Checkers_App extends Application {
         return new Move_Result(Move_Type.NONE);
     }
 
+    /*** sets size */
     private int toBoard(double pixel) {
         return (int) (pixel + TILE_SIZE / 2) / TILE_SIZE;
     }
@@ -88,6 +91,7 @@ public class Checkers_App extends Application {
         primaryStage.show();
     }
 
+    /*** setting the position after the each move. */
     private Piece makePiece(Piece_Type type, int x, int y) {
         Piece piece = new Piece(type, x, y);
 

@@ -1,4 +1,4 @@
-package CS501.checkBoard_Implementation;
+//package CS501.checkBoard_Implementation;
 
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
@@ -24,6 +24,7 @@ public class Piece extends StackPane {
         return old_Y;
     }
 
+    /** parameterize constructor for Piece class*/
     public Piece(Piece_Type type, int x, int y) {
         this.type = type;
 
@@ -61,12 +62,14 @@ public class Piece extends StackPane {
         });
     }
 
+    /*** for moving in x and x direction*/
     public void _move(int x, int y) {
         old_X = x * TILE_SIZE;
         old_Y = y * TILE_SIZE;
         relocate(old_X, old_Y);
     }
 
+    /** for aborting the move */
     public void abort_Move() {
         relocate(old_X, old_Y);
     }
